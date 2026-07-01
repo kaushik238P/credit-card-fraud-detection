@@ -41,6 +41,8 @@ COPY artifacts/preprocessing/latest/ artifacts/preprocessing/latest/
 # Setup non-root user and assign permissions
 RUN groupadd -r app && useradd -r -g app app && chown -R app:app /app
 
+ENV MPLCONFIGDIR=/tmp/matplotlib
+
 # Run container as non-root user
 USER app
 

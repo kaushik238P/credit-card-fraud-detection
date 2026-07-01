@@ -22,8 +22,8 @@ st.markdown("""
 *   **CatBoost**: Champion gradient boosted decision tree classifier model.
 *   **FastAPI**: Lightweight HTTP REST API inference layer.
 *   **Streamlit**: Professional dashboard user interface layer.
-*   **MLflow**: Model lifecycle tracking and model registry server.
-*   **Docker / Qdrant**: Production deployment containerization and vector embedding placeholders.
+*   **MLflow**: Used during training to track experiments and metrics. The production deployment runs in **Offline Mode (Local Artifact Mode)**, serving predictions directly from exported models to simplify runtime infrastructure.
+*   **Docker**: Multi-service containerization for simplified deployment.
 """)
 
 st.subheader("System Features")

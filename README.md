@@ -54,13 +54,20 @@ Minimize fraud-related financial losses while reducing manual review effort by a
 - **Experiment Tracking**: Logs parameters, metrics, models, and artifacts using MLflow.
 - **FastAPI REST API**: Provides low-latency prediction endpoints for single and batch inference.
 - **Interactive Streamlit Dashboard**: Supports single prediction, batch prediction, and system health monitoring.
-- **Containerized Deployment**: Multi-stage Docker builds with Docker Compose orchestration for backend, frontend, and MLflow services.
+- **Containerized Deployment**: Multi-stage Docker builds with Docker Compose orchestration for backend and frontend.
 - **Centralized Logging**: Structured application logging designed for Docker-native log aggregation.
 ---
 
 ## 🏗️ System Architecture
 
-The following diagram illustrates the lifecycle of a transaction evaluation, highlighting microservice communications, validation layers, pipeline runs, and registry integrations:
+The project is designed with a decoupled deployment architecture running in **MLflow Offline Mode**:
+
+```
+Streamlit (UI) ──> FastAPI (Backend) ──> Local Production Artifacts
+```
+
+- **Training**: MLflow is fully utilized during the model training phase to log parameters, tracking metrics, plots, and register models.
+- **Production Inference**: The FastAPI serving layer bypasses connection attempts to the MLflow tracking server and directly loads serialized model and preprocessing assets from `artifacts/models/latest/`. This simplifies infrastructure complexity and eliminates a production dependency on a running MLflow server while preserving full model lineage.
 
 ```mermaid
 graph TD
@@ -77,18 +84,16 @@ graph TD
         Decision -->|6. Return Decision Response| FastAPI
     end
     
-    FastAPI <-->|Fetch Registry Champions & Models| MLflow[MLflow Server]
     FastAPI -->|Export System Metrics| Prometheus[/metrics Endpoint]
     
-    subgraph Data & Storage
-        MLflow <-->|Read/Write Artifacts| LocalStore[(Local mlruns / artifacts)]
-        MLflow <-->|Registry Database| SQLStore[(mlflow.db SQLite)]
+    subgraph Production Deployment - Offline Mode
+        FastAPI -->|Load Local production Artifacts| LocalStore[(artifacts/models/latest/)]
     end
     
     style FastAPI fill:#009688,stroke:#333,stroke-width:2px,color:#fff
     style Streamlit fill:#FF4B4B,stroke:#333,stroke-width:2px,color:#fff
-    style MLflow fill:#0194E2,stroke:#333,stroke-width:2px,color:#fff
 ```
+
 
 ---
 
@@ -155,7 +160,7 @@ credit-card-fraud-detection/
 4. **Preprocessing**: Handled by `PreprocessingPipeline` fitting frequency-encoders (for high cardinality categoricals) and one-hot encoders (for low cardinality features), followed by scaling numeric features.
 5. **Training**: Supports training multiple machine learning models including CatBoost, XGBoost, LightGBM, and Random Forest. The production inference pipeline uses the CatBoost model with class imbalance handling.
 6. **Evaluation**: Compiles validation and test sets metrics (ROC AUC, PR AUC, F1, Precision, Recall), builds plots (calibration, lift, gain, confusion matrices), and saves features importance configurations.
-7. **Deployment**: Production artifacts (model, encoders, scalers, and metadata) are versioned under `artifacts/` and logged to MLflow for experiment tracking and model management. During inference, the backend attempts to load from MLflow and automatically falls back to local production artifacts if necessary.
+7. **Deployment**: Production artifacts (model, encoders, scalers, and metadata) are versioned under `artifacts/` and logged to MLflow during training for experiment tracking. In production inference, the backend operates in Offline Mode, loading local production artifacts directly to eliminate the runtime dependency on the MLflow tracking server.
 8. **Inference**: The FastAPI service preloads the production model and preprocessing artifacts through a singleton `ModelProvider`. Incoming single and batch prediction requests undergo validation, feature engineering, preprocessing, and model inference before the prediction results are returned.
 
 ---
@@ -172,7 +177,7 @@ credit-card-fraud-detection/
 | **MLflow**         | MLOps            | Experiment tracking, model management, and artifact logging                       |
 | **Pandas / NumPy** | Data Processing  | Data manipulation, numerical computing, and feature engineering                   |
 | **Scikit-Learn**   | Machine Learning | Preprocessing, feature transformation, model evaluation, and utility functions    |
-| **Docker**         | Containerization | Multi-stage containerized deployment for backend, frontend, and MLflow services   |
+| **Docker**         | Containerization | Multi-stage containerized deployment for backend and frontend services            |
 
 
 ---
@@ -230,8 +235,6 @@ Frontend : http://localhost:8501
 Backend API : http://localhost:8000
 
 Swagger : http://localhost:8000/docs
-
-MLflow : http://localhost:5000
 ---
 
 ## 📖 API Documentation

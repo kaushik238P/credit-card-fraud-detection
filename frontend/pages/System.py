@@ -50,7 +50,7 @@ try:
     if run_id and run_id != "local":
         mlflow_status = f"Connected (ID: {run_id})"
     else:
-        mlflow_status = "Offline Mode"
+        mlflow_status = "Local Artifact Mode (Offline)"
 except Exception:
     pass
 

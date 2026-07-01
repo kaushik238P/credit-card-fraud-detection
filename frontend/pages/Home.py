@@ -27,8 +27,11 @@ except Exception:
 try:
     meta = api_client.get_metadata()
     threshold = f"{meta.get('threshold', 0.404694):.4f}"
-    if meta.get("mlflow_run_id") and meta.get("mlflow_run_id") != "local":
+    run_id = meta.get("mlflow_run_id")
+    if run_id and run_id != "local":
         mlflow_status = "Connected"
+    else:
+        mlflow_status = "Offline Mode"
 except Exception:
     pass
 
