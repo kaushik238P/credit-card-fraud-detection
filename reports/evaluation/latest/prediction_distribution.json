@@ -1,0 +1,5 @@
+{
+  "threshold": 0.4047,
+  "predicted_fraud": 759,
+  "predicted_legitimate": 131331
+}

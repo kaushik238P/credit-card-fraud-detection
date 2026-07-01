@@ -1,0 +1,135 @@
+{
+  "model_version": "20260630_112318",
+  "preprocessing_version": "1.0.0",
+  "dataset_hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+  "feature_schema_hash": "7bfc36a34c781be2cfe9dc0a507dd19732335ae24bef5152d56d566803e37157",
+  "artifacts": [
+    {
+      "name": "metrics",
+      "filename": "metrics.json",
+      "sha256": "0b5208212fedc1d26fca93fc6f53df76f990b2d4490f22d938da0d81ce602d38",
+      "size_bytes": 2673,
+      "created_at": "2026-06-30T11:24:39.261434+00:00"
+    },
+    {
+      "name": "business_metrics",
+      "filename": "business_metrics.json",
+      "sha256": "726196a689ee9784368346db7d1ae83fa432ac8f74ad243c75e400021bdd1f81",
+      "size_bytes": 2441,
+      "created_at": "2026-06-30T11:24:39.267020+00:00"
+    },
+    {
+      "name": "threshold",
+      "filename": "threshold.json",
+      "sha256": "86b55027accc6cb4389f4df7ae1d63ea5910535dd17e982316b232688b6ee968",
+      "size_bytes": 207,
+      "created_at": "2026-06-30T11:24:39.283092+00:00"
+    },
+    {
+      "name": "feature_importance_csv",
+      "filename": "feature_importance.csv",
+      "sha256": "3f6bf9745b046378b89f87c8738898d541a1965d7ec3f4c63f94a55880d4dc2c",
+      "size_bytes": 1029,
+      "created_at": "2026-06-30T11:24:39.290465+00:00"
+    },
+    {
+      "name": "feature_importance_json",
+      "filename": "feature_importance.json",
+      "sha256": "0c2a04afc7c3f35a25b88d9f11bd69d59eb3de8e8ae7259e87bc1829aa13af56",
+      "size_bytes": 1210,
+      "created_at": "2026-06-30T11:24:39.302328+00:00"
+    },
+    {
+      "name": "confusion_matrix_csv",
+      "filename": "confusion_matrix.csv",
+      "sha256": "1a3cf9949e23cfb247c4cd5c5b90d271e28711820b0fc016d4ae27225f3e1ebb",
+      "size_bytes": 62,
+      "created_at": "2026-06-30T11:24:39.304653+00:00"
+    },
+    {
+      "name": "prediction_distribution",
+      "filename": "prediction_distribution.json",
+      "sha256": "b0367d5a0543fbd091546188b5720b0fbade8610049e5303f7a54ea4022b014b",
+      "size_bytes": 89,
+      "created_at": "2026-06-30T11:24:39.309455+00:00"
+    },
+    {
+      "name": "prediction_summary",
+      "filename": "prediction_summary.json",
+      "sha256": "c16422f69adb715c970dd0219f9cb81810508f1bb1c61a5f6467be8dc4e569fb",
+      "size_bytes": 199,
+      "created_at": "2026-06-30T11:24:39.313706+00:00"
+    },
+    {
+      "name": "report_json",
+      "filename": "evaluation_report.json",
+      "sha256": "5ac96571785675ddb44540371989aa82a3a89e8613a88b07fe455d035905c4b7",
+      "size_bytes": 10450,
+      "created_at": "2026-06-30T11:24:39.322082+00:00"
+    },
+    {
+      "name": "report_markdown",
+      "filename": "evaluation_report.md",
+      "sha256": "b6c459001ebe8c457e50a46e6433c019a46a2e900efdf9694ac1e7ee2372364a",
+      "size_bytes": 6626,
+      "created_at": "2026-06-30T11:24:39.322794+00:00"
+    },
+    {
+      "name": "ROC Curve",
+      "filename": "roc_curve.png",
+      "sha256": "a169c2bcd18b8f0555ef8610791a2a9483b9d216e523acb10ea86eabf353cd26",
+      "size_bytes": 31337,
+      "created_at": "2026-06-30T11:24:33.421855+00:00"
+    },
+    {
+      "name": "Precision-Recall Curve",
+      "filename": "precision_recall_curve.png",
+      "sha256": "b1cd4b95ea9b93c0a8097907c1fb53a78a99b49d7656f40b8d1856579c93763b",
+      "size_bytes": 24863,
+      "created_at": "2026-06-30T11:24:34.113675+00:00"
+    },
+    {
+      "name": "Confusion Matrix Plot",
+      "filename": "confusion_matrix.png",
+      "sha256": "6410215fa9488fdb4460ce405d33b78b57fa68830eff646fb5cc0ce342e69fe6",
+      "size_bytes": 18567,
+      "created_at": "2026-06-30T11:24:34.663730+00:00"
+    },
+    {
+      "name": "Feature Importance Plot",
+      "filename": "feature_importance.png",
+      "sha256": "99a5ca7bbc3a97cf7799076c59ab27658d58dd0c1907a32e4641680ac917f7b3",
+      "size_bytes": 37517,
+      "created_at": "2026-06-30T11:24:35.305768+00:00"
+    },
+    {
+      "name": "Probability Distribution",
+      "filename": "probability_distribution.png",
+      "sha256": "a70a5223683290768c5e4b8f8a9a2d77b5dbd57f6652d91df1903a5cc9302cfc",
+      "size_bytes": 28549,
+      "created_at": "2026-06-30T11:24:36.363092+00:00"
+    },
+    {
+      "name": "Calibration Curve",
+      "filename": "calibration_curve.png",
+      "sha256": "aa207b665ee3715a3a83add8f1fab9724e10839b92e54cecd844c3efcce24363",
+      "size_bytes": 39880,
+      "created_at": "2026-06-30T11:24:37.083777+00:00"
+    },
+    {
+      "name": "Lift Curve",
+      "filename": "lift_curve.png",
+      "sha256": "7f57b4d58302b4b2222930a454f76af94071c0008863c0e30c02db1e37e780e2",
+      "size_bytes": 32003,
+      "created_at": "2026-06-30T11:24:37.859490+00:00"
+    },
+    {
+      "name": "Gain Curve",
+      "filename": "gain_curve.png",
+      "sha256": "4bc12f1f99e3787619e28c9ed6f96ef6accc6dd0f2e80d243565625f3b72ddca",
+      "size_bytes": 34113,
+      "created_at": "2026-06-30T11:24:38.522183+00:00"
+    }
+  ],
+  "generated_at": "2026-06-30T11:24:39.675703+00:00"
+}

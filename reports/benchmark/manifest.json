@@ -1,0 +1,53 @@
+{
+  "artifacts": [
+    {
+      "filename": "benchmark_report.json",
+      "sha256": "3200c1f529331ae82612edb76e7686116af2f9bc1e40319937dd765d1a152df7",
+      "size_bytes": 7693,
+      "mime_type": "application/json",
+      "created_at": "2026-06-30T11:24:42.705832+00:00"
+    },
+    {
+      "filename": "benchmark_report.md",
+      "sha256": "09f5c784254d3eb2bf09f9fdf7b38baeda68f05f3dd922cdf9e6c5ad9fd9f897",
+      "size_bytes": 3107,
+      "mime_type": "text/markdown",
+      "created_at": "2026-06-30T11:24:42.706983+00:00"
+    },
+    {
+      "filename": "model_ranking.csv",
+      "sha256": "078681a320039f2b67444a19ed0cb193c544e18f192f4eb1c2577feba1f54038",
+      "size_bytes": 494,
+      "mime_type": "application/vnd.ms-excel",
+      "created_at": "2026-06-30T11:24:42.703556+00:00"
+    },
+    {
+      "filename": "best_model.json",
+      "sha256": "5b494bcb290425aca251eb8667a57c9ae1fd814eda6eb807867d83a5fb0b3522",
+      "size_bytes": 191,
+      "mime_type": "application/json",
+      "created_at": "2026-06-30T11:24:42.702410+00:00"
+    },
+    {
+      "filename": "benchmark_metadata.json",
+      "sha256": "a3d878067f9cca0d27814efad400dd1f9306bd2364aa5bae3d58f6d105f87bf9",
+      "size_bytes": 533,
+      "mime_type": "application/json",
+      "created_at": "2026-06-30T11:24:42.699889+00:00"
+    },
+    {
+      "filename": "benchmark_summary.json",
+      "sha256": "bd597891027613406716de3e8a9058568f94192d89ca03880fb60fa4e86cb7d4",
+      "size_bytes": 277,
+      "mime_type": "application/json",
+      "created_at": "2026-06-30T11:24:42.701813+00:00"
+    },
+    {
+      "filename": "benchmark_validation.json",
+      "sha256": "f9466b85d5b5c36068ac524d1407874ef447f9731c81450f732a630c2631796f",
+      "size_bytes": 7701,
+      "mime_type": "application/json",
+      "created_at": "2026-06-30T11:24:42.734578+00:00"
+    }
+  ]
+}

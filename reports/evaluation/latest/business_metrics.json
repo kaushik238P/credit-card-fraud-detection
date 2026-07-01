@@ -1,0 +1,73 @@
+{
+  "Fraud_Detection_Rate": {
+    "name": "Fraud_Detection_Rate",
+    "value": 0.8176538908246226,
+    "description": "Percentage of actual fraud cases caught (Recall).",
+    "metadata": {}
+  },
+  "False_Positive_Rate": {
+    "name": "False_Positive_Rate",
+    "value": 0.0004191146773960024,
+    "description": "Percentage of legitimate transactions incorrectly flagged.",
+    "metadata": {}
+  },
+  "False_Negative_Rate": {
+    "name": "False_Negative_Rate",
+    "value": 0.18234610917537747,
+    "description": "Percentage of fraud transactions missed.",
+    "metadata": {}
+  },
+  "Fraud_Capture_Rate": {
+    "name": "Fraud_Capture_Rate",
+    "value": 0.921806019939537,
+    "description": "Percentage of total fraud transaction monetary volume saved.",
+    "metadata": {}
+  },
+  "Transactions_Flagged": {
+    "name": "Transactions_Flagged",
+    "value": 759.0,
+    "description": "Total number of transactions flagged as fraud by the model.",
+    "metadata": {}
+  },
+  "Alert_Rate": {
+    "name": "Alert_Rate",
+    "value": 0.005746082216670452,
+    "description": "Ratio of flagged transactions to total transactions.",
+    "metadata": {}
+  },
+  "Alerts_per_1_000_Transactions": {
+    "name": "Alerts_per_1_000_Transactions",
+    "value": 5.746082216670452,
+    "description": "Number of alerts generated per 1,000 transactions.",
+    "metadata": {}
+  },
+  "Alerts_per_10_000_Transactions": {
+    "name": "Alerts_per_10_000_Transactions",
+    "value": 57.46082216670452,
+    "description": "Number of alerts generated per 10,000 transactions.",
+    "metadata": {}
+  },
+  "Alerts_per_100_000_Transactions": {
+    "name": "Alerts_per_100_000_Transactions",
+    "value": 574.6082216670452,
+    "description": "Number of alerts generated per 100,000 transactions.",
+    "metadata": {}
+  },
+  "Precision_At_K": {
+    "name": "Precision_At_K",
+    "value": 1.0,
+    "description": "Precision score evaluating only top 100 predicted scores.",
+    "metadata": {
+      "k": 100,
+      "fraud_cases_inside_top_k": 100,
+      "legitimate_cases_inside_top_k": 0,
+      "total_frauds_in_test_fold": 861
+    }
+  },
+  "Potential_Fraud_Amount_Detected": {
+    "name": "Potential_Fraud_Amount_Detected",
+    "value": 430903.93,
+    "description": "Sum of transaction amounts for correctly detected fraud transactions. Do NOT imply actual monetary savings.",
+    "metadata": {}
+  }
+}

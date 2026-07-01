@@ -1,0 +1,300 @@
+{
+  "validation_metrics": {
+    "ROC_AUC": 0.9968301917185474,
+    "PR_AUC": 0.9044041792124621,
+    "Precision": 0.9188767550702028,
+    "Recall": 0.8024523160762943,
+    "F1": 0.8567272727272728,
+    "Balanced_Accuracy": 0.9010367723760986,
+    "MCC": 0.857997766977801,
+    "Specificity": 0.9996212286759029,
+    "Sensitivity": 0.8024523160762943,
+    "Confusion_Matrix": {
+      "tn": 137234,
+      "fp": 52,
+      "fn": 145,
+      "tp": 589
+    },
+    "Classification_Report": {
+      "0": {
+        "precision": 0.9989445257280952,
+        "recall": 0.9996212286759029,
+        "f1-score": 0.9992827626381228,
+        "support": 137286.0
+      },
+      "1": {
+        "precision": 0.9188767550702028,
+        "recall": 0.8024523160762943,
+        "f1-score": 0.8567272727272728,
+        "support": 734.0
+      },
+      "accuracy": 0.9985726706274453,
+      "macro avg": {
+        "precision": 0.958910640399149,
+        "recall": 0.9010367723760986,
+        "f1-score": 0.9280050176826977,
+        "support": 138020.0
+      },
+      "weighted avg": {
+        "precision": 0.9985187197314072,
+        "recall": 0.9985726706274453,
+        "f1-score": 0.9985246425859958,
+        "support": 138020.0
+      }
+    },
+    "Log_Loss": 0.005319259942537206,
+    "Brier_Score": 0.0012084187706619047
+  },
+  "test_metrics": {
+    "ROC_AUC": 0.9976140068257944,
+    "PR_AUC": 0.9309047791129833,
+    "Precision": 0.927536231884058,
+    "Recall": 0.8176538908246226,
+    "F1": 0.8691358024691358,
+    "Balanced_Accuracy": 0.9086173880736133,
+    "MCC": 0.8700792488638428,
+    "Specificity": 0.999580885322604,
+    "Sensitivity": 0.8176538908246226,
+    "Confusion_Matrix": {
+      "tn": 131174,
+      "fp": 55,
+      "fn": 157,
+      "tp": 704
+    },
+    "Classification_Report": {
+      "0": {
+        "precision": 0.9988045472889112,
+        "recall": 0.999580885322604,
+        "f1-score": 0.9991925655088361,
+        "support": 131229.0
+      },
+      "1": {
+        "precision": 0.927536231884058,
+        "recall": 0.8176538908246226,
+        "f1-score": 0.8691358024691358,
+        "support": 861.0
+      },
+      "accuracy": 0.9983950336891514,
+      "macro avg": {
+        "precision": 0.9631703895864846,
+        "recall": 0.9086173880736133,
+        "f1-score": 0.9341641839889859,
+        "support": 132090.0
+      },
+      "weighted avg": {
+        "precision": 0.9983400002409621,
+        "recall": 0.9983950336891514,
+        "f1-score": 0.9983448187227266,
+        "support": 132090.0
+      }
+    },
+    "Log_Loss": 0.0053696799173138824,
+    "Brier_Score": 0.001304287860409999
+  },
+  "business_metrics": {
+    "Fraud_Detection_Rate": {
+      "name": "Fraud_Detection_Rate",
+      "value": 0.8176538908246226,
+      "description": "Percentage of actual fraud cases caught (Recall).",
+      "metadata": {}
+    },
+    "False_Positive_Rate": {
+      "name": "False_Positive_Rate",
+      "value": 0.0004191146773960024,
+      "description": "Percentage of legitimate transactions incorrectly flagged.",
+      "metadata": {}
+    },
+    "False_Negative_Rate": {
+      "name": "False_Negative_Rate",
+      "value": 0.18234610917537747,
+      "description": "Percentage of fraud transactions missed.",
+      "metadata": {}
+    },
+    "Fraud_Capture_Rate": {
+      "name": "Fraud_Capture_Rate",
+      "value": 0.921806019939537,
+      "description": "Percentage of total fraud transaction monetary volume saved.",
+      "metadata": {}
+    },
+    "Transactions_Flagged": {
+      "name": "Transactions_Flagged",
+      "value": 759.0,
+      "description": "Total number of transactions flagged as fraud by the model.",
+      "metadata": {}
+    },
+    "Alert_Rate": {
+      "name": "Alert_Rate",
+      "value": 0.005746082216670452,
+      "description": "Ratio of flagged transactions to total transactions.",
+      "metadata": {}
+    },
+    "Alerts_per_1_000_Transactions": {
+      "name": "Alerts_per_1_000_Transactions",
+      "value": 5.746082216670452,
+      "description": "Number of alerts generated per 1,000 transactions.",
+      "metadata": {}
+    },
+    "Alerts_per_10_000_Transactions": {
+      "name": "Alerts_per_10_000_Transactions",
+      "value": 57.46082216670452,
+      "description": "Number of alerts generated per 10,000 transactions.",
+      "metadata": {}
+    },
+    "Alerts_per_100_000_Transactions": {
+      "name": "Alerts_per_100_000_Transactions",
+      "value": 574.6082216670452,
+      "description": "Number of alerts generated per 100,000 transactions.",
+      "metadata": {}
+    },
+    "Precision_At_K": {
+      "name": "Precision_At_K",
+      "value": 1.0,
+      "description": "Precision score evaluating only top 100 predicted scores.",
+      "metadata": {
+        "k": 100,
+        "fraud_cases_inside_top_k": 100,
+        "legitimate_cases_inside_top_k": 0,
+        "total_frauds_in_test_fold": 861
+      }
+    },
+    "Potential_Fraud_Amount_Detected": {
+      "name": "Potential_Fraud_Amount_Detected",
+      "value": 430903.93,
+      "description": "Sum of transaction amounts for correctly detected fraud transactions. Do NOT imply actual monetary savings.",
+      "metadata": {}
+    }
+  },
+  "threshold_result": {
+    "optimization_strategy": "MAX_F1",
+    "default_threshold": 0.5,
+    "optimized_threshold": 0.404694,
+    "validation_precision": 0.918877,
+    "validation_recall": 0.802452,
+    "validation_f1": 0.856727
+  },
+  "feature_importance": {
+    "cc_num": 0.4016839528437392,
+    "merchant": 1.2915160984825536,
+    "category": 24.099717393464545,
+    "amt": 10.352063823306878,
+    "city": 0.6809507060510981,
+    "state": 0.04609880053818176,
+    "zip": 0.18216968252914173,
+    "lat": 0.30190098037833796,
+    "long": 0.22464927333901052,
+    "city_pop": 1.1416041722653847,
+    "job": 0.21845796538789844,
+    "merch_lat": 0.2145609372516846,
+    "merch_long": 0.13776375850476547,
+    "hour": 12.731624898866581,
+    "day_of_week": 0.4073546444604361,
+    "month": 0.9506823982542745,
+    "is_weekend": 0.05421068760663728,
+    "is_night_transaction": 1.8748829625039807,
+    "business_hours": 0.0,
+    "log_amount": 9.549900326971775,
+    "high_value_transaction": 0.36125278243497494,
+    "age": 6.94133750662557,
+    "age_group": 0.2950041062388535,
+    "customer_merchant_distance_km": 0.1837513405636673,
+    "is_far_transaction": 0.0,
+    "merchant_frequency": 1.4191249832193185,
+    "category_frequency": 23.26223069574504,
+    "job_frequency": 0.4201875516668547,
+    "state_frequency": 0.1038766291520631,
+    "city_frequency": 0.7798645872361657,
+    "gender_frequency": 0.47643338080491626,
+    "gender_F": 0.41240756532198963,
+    "gender_M": 0.48273540798367115
+  },
+  "plots": [
+    {
+      "plot_name": "ROC Curve",
+      "file_name": "roc_curve.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\roc_curve.png"
+    },
+    {
+      "plot_name": "Precision-Recall Curve",
+      "file_name": "precision_recall_curve.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\precision_recall_curve.png"
+    },
+    {
+      "plot_name": "Confusion Matrix Plot",
+      "file_name": "confusion_matrix.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\confusion_matrix.png"
+    },
+    {
+      "plot_name": "Feature Importance Plot",
+      "file_name": "feature_importance.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\feature_importance.png"
+    },
+    {
+      "plot_name": "Probability Distribution",
+      "file_name": "probability_distribution.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\probability_distribution.png"
+    },
+    {
+      "plot_name": "Calibration Curve",
+      "file_name": "calibration_curve.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\calibration_curve.png"
+    },
+    {
+      "plot_name": "Lift Curve",
+      "file_name": "lift_curve.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\lift_curve.png"
+    },
+    {
+      "plot_name": "Gain Curve",
+      "file_name": "gain_curve.png",
+      "absolute_path": "D:\\credit-card-fraud-detection\\reports\\evaluation\\20260630_112431\\plots\\gain_curve.png"
+    }
+  ],
+  "warnings": [],
+  "dataset_hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+  "feature_schema_hash": "7bfc36a34c781be2cfe9dc0a507dd19732335ae24bef5152d56d566803e37157",
+  "preprocessing_version": "1.0.0",
+  "model_version": "20260630_112318",
+  "evaluation_duration": 7581.61,
+  "generated_at": "2026-06-30T11:24:39.260991+00:00",
+  "fold_statistics": {
+    "Train": {
+      "rows": 1024843,
+      "legitimate_count": 1018944,
+      "fraud_count": 5899,
+      "fraud_rate": 0.5756003602503018
+    },
+    "Validation": {
+      "rows": 138020,
+      "legitimate_count": 137286,
+      "fraud_count": 734,
+      "fraud_rate": 0.5318069844950007
+    },
+    "Test": {
+      "rows": 132090,
+      "legitimate_count": 131229,
+      "fraud_count": 861,
+      "fraud_rate": 0.6518282988871223
+    }
+  },
+  "threshold_comparison": {
+    "default_threshold_0.5": {
+      "precision": 0.9385245901639344,
+      "recall": 0.7979094076655052,
+      "f1": 0.8625235404896422,
+      "specificity": 0.9996570879912214,
+      "false_positive_rate": 0.0003429120087785474,
+      "false_negative_rate": 0.20209059233449478,
+      "fraud_detection_rate": 0.7979094076655052
+    },
+    "optimized_threshold": {
+      "precision": 0.927536231884058,
+      "recall": 0.8176538908246226,
+      "f1": 0.8691358024691358,
+      "specificity": 0.999580885322604,
+      "false_positive_rate": 0.0004191146773960024,
+      "false_negative_rate": 0.18234610917537747,
+      "fraud_detection_rate": 0.8176538908246226
+    }
+  },
+  "calibration_note": "Model probabilities are raw estimator outputs. Threshold optimization operates on uncalibrated probabilities. Probability calibration (Platt Scaling / Isotonic Regression) is future work."
+}

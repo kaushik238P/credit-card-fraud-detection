@@ -1,0 +1,9 @@
+{
+  "Best Model": "CATBOOST",
+  "Best PR_AUC": 0.9309047791129833,
+  "Fastest Model": "LOGISTIC_REGRESSION",
+  "Lowest False Positive Rate": "CATBOOST",
+  "Highest Recall": "LOGISTIC_REGRESSION",
+  "Highest Precision": "RANDOM_FOREST",
+  "Highest F1": "RANDOM_FOREST"
+}

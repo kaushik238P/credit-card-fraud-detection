@@ -1,0 +1,8 @@
+{
+  "optimization_strategy": "MAX_F1",
+  "default_threshold": 0.5,
+  "optimized_threshold": 0.404694,
+  "validation_precision": 0.918877,
+  "validation_recall": 0.802452,
+  "validation_f1": 0.856727
+}

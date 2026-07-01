@@ -1,0 +1,7 @@
+{
+  "best_model": "CATBOOST",
+  "selection_metric": "PR_AUC",
+  "score": 0.9309047791129833,
+  "mlflow_run_id": "fc32ef801696436480549b6198ea5e62",
+  "recommended_stage": "Production"
+}

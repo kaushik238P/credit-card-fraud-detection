@@ -1,0 +1,55 @@
+# Stage 1: Build virtual environment using uv
+FROM python:3.12-slim-bookworm AS builder
+
+# Copy uv binary from the official image
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+WORKDIR /app
+
+# Enable bytecode compilation
+ENV UV_COMPILE_BYTECODE=1
+
+# Copy only the files needed for dependency resolution
+COPY pyproject.toml uv.lock ./
+
+# Install dependencies using uv sync without installing the main project
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --frozen --no-install-project --no-dev
+
+# Stage 2: Optimized final runtime image
+FROM python:3.12-slim-bookworm AS runtime
+
+WORKDIR /app
+
+# Copy the virtual environment from the builder stage
+COPY --from=builder /app/.venv /app/.venv
+
+# Update PATH to prioritize virtual environment binaries
+ENV PATH="/app/.venv/bin:$PATH"
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Copy only the directories and files required for backend runtime/inference
+COPY config/ config/
+COPY src/ src/
+
+# Copy only production artifacts
+COPY artifacts/models/latest/ artifacts/models/latest/
+COPY artifacts/preprocessing/latest/ artifacts/preprocessing/latest/
+
+
+# Setup non-root user and assign permissions
+RUN groupadd -r app && useradd -r -g app app && chown -R app:app /app
+
+# Run container as non-root user
+USER app
+
+# Expose FastAPI port
+EXPOSE 8000
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health/liveness')"
+
+# Default to running the FastAPI backend
+CMD ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -1,0 +1,43 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+logs/
+
+artifacts/
+
+mlruns/
+
+.env
+
+.ipynb_checkpoints/
+
+*.pyc
+
+*.pyo
+
+*.pyd
+
+.DS_Store
+
+.idea/
+
+.vscode/
+
+# Local database
+mlflow.db
+
+# Raw datasets
+data/raw/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# Environment variables
+.env

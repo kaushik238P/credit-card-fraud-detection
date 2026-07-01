@@ -1,0 +1,266 @@
+{
+  "report_id": "8fbd8db0-865a-40b4-9649-ead131cda440",
+  "dataset_name": "archive.zip",
+  "dataset_hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+  "schema_name": "fraud_transaction_v1",
+  "schema_version": "1.0.0",
+  "results": [
+    {
+      "check_name": "check_empty_dataframe",
+      "category": "STRUCTURAL",
+      "status": "PASSED",
+      "severity": "INFO",
+      "message": "DataFrame is non-empty: 1,296,675 rows x 23 columns.",
+      "details": {
+        "num_rows": 1296675,
+        "num_columns": 23
+      },
+      "execution_time_ms": 0.043
+    },
+    {
+      "check_name": "check_schema",
+      "category": "STRUCTURAL",
+      "status": "PASSED",
+      "severity": "INFO",
+      "message": "Schema validation passed: all 23 required column(s) present, column count 23 within bounds.",
+      "details": {
+        "missing_required": [],
+        "missing_optional": [],
+        "unexpected_columns": [],
+        "duplicate_columns": [],
+        "column_count": 23,
+        "min_columns": 23,
+        "max_columns": 23,
+        "count_within_bounds": true
+      },
+      "execution_time_ms": 0.2
+    },
+    {
+      "check_name": "check_data_types",
+      "category": "STRUCTURAL",
+      "status": "FAILED",
+      "severity": "ERROR",
+      "message": "Data type mismatch in 12 column(s): ['trans_date_trans_time', 'merchant', 'category', 'first', 'last', 'gender', 'street', 'city', 'state', 'job', 'dob', 'trans_num'].",
+      "details": {
+        "columns_checked": 23,
+        "mismatches": [
+          {
+            "column": "trans_date_trans_time",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "merchant",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "category",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "first",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "last",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "gender",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "street",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "city",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "state",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "job",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "dob",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          },
+          {
+            "column": "trans_num",
+            "expected_category": "categorical",
+            "actual_dtype": "str",
+            "actual_category": "unknown"
+          }
+        ],
+        "mismatch_count": 12
+      },
+      "execution_time_ms": 3.599
+    },
+    {
+      "check_name": "check_empty_columns",
+      "category": "STRUCTURAL",
+      "status": "PASSED",
+      "severity": "INFO",
+      "message": "No entirely-null columns detected.",
+      "details": {
+        "entirely_empty_columns": [],
+        "required_empty": [],
+        "other_empty": [],
+        "total_empty_count": 0
+      },
+      "execution_time_ms": 38.451
+    },
+    {
+      "check_name": "check_missing_values",
+      "category": "QUALITY",
+      "status": "PASSED",
+      "severity": "INFO",
+      "message": "No missing values detected across all columns.",
+      "details": {
+        "columns_with_missing": {},
+        "total_missing_cells": 0,
+        "columns_affected": 0,
+        "max_missing_pct": 0.0,
+        "most_affected_column": null,
+        "warning_threshold_pct": 5.0,
+        "error_threshold_pct": 20.0
+      },
+      "execution_time_ms": 135.365
+    },
+    {
+      "check_name": "check_duplicate_rows",
+      "category": "QUALITY",
+      "status": "PASSED",
+      "severity": "INFO",
+      "message": "No duplicate rows detected in 1,296,675 rows.",
+      "details": {
+        "duplicate_count": 0,
+        "duplicate_pct": 0.0,
+        "total_rows": 1296675,
+        "warning_threshold_pct": 1.0,
+        "error_threshold_pct": 10.0
+      },
+      "execution_time_ms": 4696.567
+    },
+    {
+      "check_name": "check_target_column",
+      "category": "TARGET",
+      "status": "PASSED",
+      "severity": "INFO",
+      "message": "Target column 'is_fraud' is valid: 0 null(s), 2 unique class(es).",
+      "details": {
+        "target_column": "is_fraud",
+        "null_count": 0,
+        "total_rows": 1296675,
+        "unique_values": [
+          "0",
+          "1"
+        ],
+        "unique_count": 2
+      },
+      "execution_time_ms": 27.703
+    },
+    {
+      "check_name": "check_class_distribution",
+      "category": "TARGET",
+      "status": "WARNING",
+      "severity": "WARNING",
+      "message": "Class imbalance detected in 'is_fraud': minority class '1' = 0.5789% (7,506 samples). Imbalance ratio: 171.8:1. Consider SMOTE, class weights, or threshold tuning.",
+      "details": {
+        "target_column": "is_fraud",
+        "class_counts": {
+          "0": 1289169,
+          "1": 7506
+        },
+        "class_percentages": {
+          "0": 99.4211,
+          "1": 0.5789
+        },
+        "total_labelled_rows": 1296675,
+        "minority_class": "1",
+        "minority_count": 7506,
+        "minority_pct": 0.5789,
+        "majority_class": "0",
+        "majority_count": 1289169,
+        "imbalance_ratio": 171.75,
+        "warning_threshold_pct": 5.0
+      },
+      "execution_time_ms": 36.175
+    }
+  ],
+  "summary": {
+    "total_checks": 8,
+    "passed": 6,
+    "errors": 1,
+    "warnings": 1,
+    "duration_ms": 4939.38,
+    "overall_passed": false
+  },
+  "generated_at": "2026-06-30T01:51:39.831664+00:00",
+  "passed": false,
+  "validation_duration_ms": 4939.38,
+  "metadata_snapshot": {
+    "file_name": "archive.zip",
+    "file_path": "D:\\credit-card-fraud-detection\\data\\raw\\archive.zip",
+    "file_extension": ".zip",
+    "file_size_bytes": 211766662,
+    "num_rows": 1296675,
+    "num_columns": 23,
+    "column_names": [
+      "Unnamed: 0",
+      "trans_date_trans_time",
+      "cc_num",
+      "merchant",
+      "category",
+      "amt",
+      "first",
+      "last",
+      "gender",
+      "street",
+      "city",
+      "state",
+      "zip",
+      "lat",
+      "long",
+      "city_pop",
+      "job",
+      "dob",
+      "trans_num",
+      "unix_time",
+      "merch_lat",
+      "merch_long",
+      "is_fraud"
+    ],
+    "memory_usage_bytes": 447299402,
+    "target_column": "is_fraud",
+    "load_timestamp": "2026-06-30T01:51:34.890715+00:00",
+    "dataset_hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+    "dataset_version": null,
+    "loaded_by": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Dataset Name": "Fraud Transaction Dataset",
+  "Dataset Version": "1.0.0",
+  "Dataset Hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+  "Feature Schema Hash": "08501e1a45b2a67b5dbc4c06725a90f75ae435179111098ef69543e5df77b745",
+  "Pipeline Version": "1.0.0",
+  "Models Evaluated": [
+    "CATBOOST",
+    "RANDOM_FOREST",
+    "LIGHTGBM",
+    "XGBOOST",
+    "LOGISTIC_REGRESSION"
+  ],
+  "Successful Runs": 5,
+  "Failed Runs": 0,
+  "Benchmark Timestamp": "2026-06-30T11:24:42.698754+00:00"
+}

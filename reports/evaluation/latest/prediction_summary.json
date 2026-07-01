@@ -1,0 +1,8 @@
+{
+  "total_predictions": 132090,
+  "predicted_fraud": 759,
+  "predicted_legitimate": 131331,
+  "actual_fraud": 861,
+  "actual_legitimate": 131229,
+  "optimized_threshold": 0.4046941649926799
+}
