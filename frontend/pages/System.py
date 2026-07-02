@@ -8,7 +8,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from api import api_client
 from config import render_header, render_status_badge
 
-render_header("🖥️ System Diagnostics", "Monitor inference infrastructure status and model metadata")
+render_header("🖥️ System Diagnostic", "Monitor inference infrastructure status and model metadata")
 
 # Probe Backend
 liveness_text = "OFFLINE"
