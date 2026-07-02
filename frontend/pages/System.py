@@ -19,7 +19,7 @@ model_version = "v1.0.0"
 pipeline_version = "v1.0.0"
 threshold = "0.4047"
 feature_count = 33
-mlflow_status = "Offline Mode"
+# mlflow_status = "Offline Mode"
 
 try:
     liveness = api_client.get_liveness()
