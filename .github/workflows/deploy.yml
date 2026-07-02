@@ -25,6 +25,13 @@ jobs:
           username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
           password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
 
+      - name: Debug repository contents
+        run: |
+          pwd
+          ls -la
+          echo "Artifacts:"
+          find artifacts -maxdepth 3 -type f || true
+
       - name: Build Backend Image
         run: |
           docker build \
