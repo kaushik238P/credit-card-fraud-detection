@@ -1,0 +1,58 @@
+name: Deploy to Azure VM
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  REGISTRY: ${{ secrets.AZURE_REGISTRY }}
+  BACKEND_IMAGE: fraud-backend
+  FRONTEND_IMAGE: fraud-frontend
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Login to Azure Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ secrets.AZURE_REGISTRY_USERNAME }}
+          password: ${{ secrets.AZURE_REGISTRY_PASSWORD }}
+
+      - name: Build Backend Image
+        run: |
+          docker build \
+            -f Dockerfile.backend \
+            -t $REGISTRY/$BACKEND_IMAGE:latest .
+
+      - name: Build Frontend Image
+        run: |
+          docker build \
+            -f Dockerfile.frontend \
+            -t $REGISTRY/$FRONTEND_IMAGE:latest .
+
+      - name: Push Backend Image2
+        run: docker push $REGISTRY/$BACKEND_IMAGE:latest
+
+      - name: Push Frontend Image
+        run: docker push $REGISTRY/$FRONTEND_IMAGE:latest
+
+      - name: Deploy on Azure VM
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USERNAME }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            cd ${{ secrets.VM_PROJECT_PATH }}
+            git pull origin main
+            docker compose -f docker-compose.azure.yml pull
+            docker compose -f docker-compose.azure.yml up -d
+            docker ps
+            docker image prune -f
