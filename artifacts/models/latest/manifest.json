@@ -1,0 +1,34 @@
+{
+  "model_version": "20260630_112318",
+  "model_type": "CATBOOST",
+  "training_version": "1.0.0",
+  "preprocessing_version": "1.0.0",
+  "preprocessing_artifact_version": "e7075b7b-ba8d-490c-9d36-0c34046f1efd",
+  "dataset_hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+  "feature_schema_hash": "7bfc36a34c781be2cfe9dc0a507dd19732335ae24bef5152d56d566803e37157",
+  "preprocessing_report_hash": "4e32829b9ba5a6b17af707c513c15204011044df0e8971e431cedca3d8c0a8a1",
+  "artifacts": [
+    {
+      "name": "model",
+      "filename": "model.joblib",
+      "sha256": "45a992ffac5dd99e42a6c102a41b98edd7010ec8ef80c02330ba708c1e905404",
+      "size_bytes": 568107,
+      "created_at": "2026-06-30T11:24:31.003928+00:00"
+    },
+    {
+      "name": "training_metadata",
+      "filename": "training_metadata.json",
+      "sha256": "a8479c7805485c83edf7b22eaeb37d0a4973cdcbd452c120b64ae58cbd00d37e",
+      "size_bytes": 1452,
+      "created_at": "2026-06-30T11:24:31.010369+00:00"
+    },
+    {
+      "name": "feature_names",
+      "filename": "feature_names.json",
+      "sha256": "557cb416c593e145e0c68c2b74e762e75c9095f845479a18e4cc1f7acfa8959d",
+      "size_bytes": 677,
+      "created_at": "2026-06-30T11:24:31.013868+00:00"
+    }
+  ],
+  "generated_at": "2026-06-30T11:24:31.074515+00:00"
+}

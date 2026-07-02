@@ -1,0 +1,21 @@
+{
+  "train": {
+    "total": 1024843,
+    "legitimate": 1018944,
+    "fraud": 5899,
+    "fraud_rate": 0.5756
+  },
+  "validation": {
+    "total": 138020,
+    "legitimate": 137286,
+    "fraud": 734,
+    "fraud_rate": 0.531807
+  },
+  "test": {
+    "total": 132090,
+    "legitimate": 131229,
+    "fraud": 861,
+    "fraud_rate": 0.651828
+  },
+  "generated_at": "2026-06-30T11:16:26.208238+00:00"
+}

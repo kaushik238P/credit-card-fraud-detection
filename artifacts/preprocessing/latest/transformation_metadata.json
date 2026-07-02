@@ -1,0 +1,190 @@
+{
+  "records": [
+    {
+      "transformer_name": "FrequencyEncoder",
+      "step_name": "FREQUENCY_ENCODING",
+      "transformer_type": "ENCODER",
+      "columns_input": [
+        "category",
+        "city",
+        "job",
+        "merchant",
+        "state"
+      ],
+      "columns_output": [
+        "category",
+        "city",
+        "job",
+        "merchant",
+        "state"
+      ],
+      "input_shape": [
+        1024843,
+        32
+      ],
+      "output_shape": [
+        1024843,
+        32
+      ],
+      "fit_on_fold": "train",
+      "parameters": {
+        "unknown_value": 0,
+        "columns": [
+          "category",
+          "city",
+          "job",
+          "merchant",
+          "state"
+        ],
+        "vocabulary_sizes": {
+          "category": 14,
+          "city": 878,
+          "job": 492,
+          "merchant": 693,
+          "state": 51
+        }
+      },
+      "duration_ms": 1023.16
+    },
+    {
+      "transformer_name": "OneHotEncoder",
+      "step_name": "ONE_HOT_ENCODING",
+      "transformer_type": "ENCODER",
+      "columns_input": [
+        "gender"
+      ],
+      "columns_output": [
+        "gender_F",
+        "gender_M"
+      ],
+      "input_shape": [
+        1024843,
+        32
+      ],
+      "output_shape": [
+        1024843,
+        33
+      ],
+      "fit_on_fold": "train",
+      "parameters": {
+        "columns": [
+          "gender"
+        ],
+        "drop_first": false,
+        "handle_unknown": "ignore",
+        "output_features": [
+          "gender_F",
+          "gender_M"
+        ]
+      },
+      "duration_ms": 1362.01
+    },
+    {
+      "transformer_name": "IdentityTransformer",
+      "step_name": "SCALING",
+      "transformer_type": "IDENTITY",
+      "columns_input": [
+        "cc_num",
+        "amt",
+        "zip",
+        "lat",
+        "long",
+        "city_pop",
+        "merch_lat",
+        "merch_long",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "is_night_transaction",
+        "business_hours",
+        "log_amount",
+        "high_value_transaction",
+        "age",
+        "age_group",
+        "customer_merchant_distance_km",
+        "is_far_transaction",
+        "merchant_frequency",
+        "category_frequency",
+        "job_frequency",
+        "state_frequency",
+        "city_frequency",
+        "gender_frequency",
+        "gender_F",
+        "gender_M"
+      ],
+      "columns_output": [
+        "cc_num",
+        "amt",
+        "zip",
+        "lat",
+        "long",
+        "city_pop",
+        "merch_lat",
+        "merch_long",
+        "hour",
+        "day_of_week",
+        "month",
+        "is_weekend",
+        "is_night_transaction",
+        "business_hours",
+        "log_amount",
+        "high_value_transaction",
+        "age",
+        "age_group",
+        "customer_merchant_distance_km",
+        "is_far_transaction",
+        "merchant_frequency",
+        "category_frequency",
+        "job_frequency",
+        "state_frequency",
+        "city_frequency",
+        "gender_frequency",
+        "gender_F",
+        "gender_M"
+      ],
+      "input_shape": [
+        1024843,
+        33
+      ],
+      "output_shape": [
+        1024843,
+        33
+      ],
+      "fit_on_fold": "train",
+      "parameters": {
+        "columns": [
+          "cc_num",
+          "amt",
+          "zip",
+          "lat",
+          "long",
+          "city_pop",
+          "merch_lat",
+          "merch_long",
+          "hour",
+          "day_of_week",
+          "month",
+          "is_weekend",
+          "is_night_transaction",
+          "business_hours",
+          "log_amount",
+          "high_value_transaction",
+          "age",
+          "age_group",
+          "customer_merchant_distance_km",
+          "is_far_transaction",
+          "merchant_frequency",
+          "category_frequency",
+          "job_frequency",
+          "state_frequency",
+          "city_frequency",
+          "gender_frequency",
+          "gender_F",
+          "gender_M"
+        ]
+      },
+      "duration_ms": 280.53
+    }
+  ]
+}

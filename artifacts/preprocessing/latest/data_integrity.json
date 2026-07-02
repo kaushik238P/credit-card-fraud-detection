@@ -1,0 +1,72 @@
+{
+  "overall_passed": true,
+  "check_count": 11,
+  "checks": {
+    "no_nan_X_train": {
+      "passed": true,
+      "nan_count": 0
+    },
+    "no_nan_X_val": {
+      "passed": true,
+      "nan_count": 0
+    },
+    "no_nan_X_test": {
+      "passed": true,
+      "nan_count": 0
+    },
+    "no_inf_X_train": {
+      "passed": true,
+      "inf_count": 0
+    },
+    "no_inf_X_val": {
+      "passed": true,
+      "inf_count": 0
+    },
+    "no_inf_X_test": {
+      "passed": true,
+      "inf_count": 0
+    },
+    "no_duplicate_feature_names": {
+      "passed": true,
+      "duplicates": []
+    },
+    "same_feature_count_across_folds": {
+      "passed": true,
+      "column_counts": {
+        "X_train": 33,
+        "X_val": 33,
+        "X_test": 33
+      }
+    },
+    "target_binary": {
+      "passed": true,
+      "unique_values": [
+        0,
+        1
+      ]
+    },
+    "feature_schema_matches_output": {
+      "passed": true,
+      "expected": [
+        "cc_num",
+        "merchant",
+        "category",
+        "amt",
+        "city"
+      ],
+      "actual": [
+        "cc_num",
+        "merchant",
+        "category",
+        "amt",
+        "city"
+      ]
+    },
+    "all_features_numeric": {
+      "passed": true,
+      "non_numeric_columns": []
+    }
+  },
+  "warnings": [],
+  "generated_at": "2026-06-30T11:16:27.047070+00:00"
+}

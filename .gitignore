@@ -6,7 +6,15 @@ __pycache__/
 
 logs/
 
-artifacts/
+# Ignore all artifacts except production artifacts
+artifacts/*
+!artifacts/models/
+!artifacts/models/latest/
+!artifacts/models/latest/**
+
+!artifacts/preprocessing/
+!artifacts/preprocessing/latest/
+!artifacts/preprocessing/latest/**
 
 mlruns/
 
